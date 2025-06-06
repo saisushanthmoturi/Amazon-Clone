@@ -127,47 +127,47 @@ xdg-open index.html
 
 
 ### Sign In Page
-![Sign In](screenshot-signin.png)
+
 *User authentication interface with Amazon branding*
 ![Screenshot 2025-06-06 112138](https://github.com/user-attachments/assets/6806dfdc-4b73-4802-ad28-c807b45ad22f)
 
 
 ### Shopping Cart
-![Shopping Cart](screenshot-cart.png)
+
 *Product management and checkout interface*
 ![Screenshot 2025-06-06 112212](https://github.com/user-attachments/assets/d0693409-e3ff-4a36-a905-d8d92e8d63c5)
 
 
 ### Orders Page
-![Orders](screenshot-orders.png)
+
 *Order history and tracking dashboard*
 ![Screenshot 2025-06-06 112154](https://github.com/user-attachments/assets/3dbc7244-774d-40dc-89bd-f35039327d46)
 
 ### Deals Page
-![Deals](screenshot-deals.png)
+
 *Special offers and promotional content section*
-![Uploading Screenshot 2025-06-06 112154.png…]()
+
 ![Screenshot 2025-06-06 112313](https://github.com/user-attachments/assets/51da7376-b15f-4d1b-930b-af9cec821d73)
 
 
 
 ### Gift Cards
-![Gift Cards](screenshot-giftcards.png)
+
 *Digital gift card purchasing interface*
 ![Screenshot 2025-06-06 112250](https://github.com/user-attachments/assets/e2c1a07e-8d20-45ff-86dd-95a0eb9c4de0)
 
 ### Registry
-![Registry](screenshot-registry.png)
+
 *Wishlist and gift registry management*
 ![Screenshot 2025-06-06 112356](https://github.com/user-attachments/assets/0bf1cd27-4ac6-4541-aea2-cc994fc48da0)
 
 ### Customer Service
-![Customer Service](screenshot-customerservice.png)
+
 *Help and support center with resources*
 ![Screenshot 2025-06-06 112332](https://github.com/user-attachments/assets/cb6b7e6e-b746-44d3-8d36-ea35669e5b21)
 
 ### Sell on Amazon
-![Sell Page](screenshot-sell.png)
+
 *Seller onboarding and registration interface*
 ![Screenshot 2025-06-06 112234](https://github.com/user-attachments/assets/e60c5ebc-d014-46ba-96ff-701d69afa7c1)
 
