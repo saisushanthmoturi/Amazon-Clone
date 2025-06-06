@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Amazon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="amazon-logo">
+                    <a href="index.html">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="logo">
+                    </a>
+                </div>
+                <div class="delivery-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span class="deliver-to">Deliver to</span>
+                        <span class="location">New York 10001</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-bar">
+                    <select class="category-dropdown">
+                        <option>All</option>
+                        <option>Electronics</option>
+                        <option>Books</option>
+                        <option>Clothing</option>
+                        <option>Home & Garden</option>
+                    </select>
+                    <input type="text" placeholder="Search Amazon" class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <span>EN</span>
+                </div>
+                <div class="account-menu">
+                    <span class="account-text">Hello, sign in</span>
+                    <span class="account-orders">Account & Lists</span>
+                </div>
+                <div class="orders">
+                    <span class="orders-text">Returns</span>
+                    <span class="orders-main">& Orders</span>
+                </div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">2</span>
+                        <span>Cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="deals.html" class="nav-link">Today's Deals</a>
+            <a href="customer-service.html" class="nav-link">Customer Service</a>
+            <a href="registry.html" class="nav-link">Registry</a>
+            <a href="gift-cards.html" class="nav-link">Gift Cards</a>
+            <a href="sell.html" class="nav-link">Sell</a>
+            <a href="products.html" class="nav-link">Products</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span> > </span>
+            <a href="products.html">Electronics</a>
+            <span> > </span>
+            <a href="#">Smartphones</a>
+            <span> > </span>
+            <span>iPhone 15 Pro Max</span>
+        </div>
+    </div>
+
+    <!-- Product Detail Container -->
+    <div class="product-detail-container">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Product Images Section -->
+                <div class="product-images">
+                    <div class="image-thumbnails">
+                        <img src="https://via.placeholder.com/80x80/007185/ffffff?text=iPhone" alt="iPhone view 1" class="thumbnail active" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/80x80/232F3E/ffffff?text=Back" alt="iPhone view 2" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/80x80/FF6B35/ffffff?text=Side" alt="iPhone view 3" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/80x80/146EB4/ffffff?text=Box" alt="iPhone view 4" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/80x80/F90/ffffff?text=Acc" alt="iPhone view 5" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/80x80/232F3E/ffffff?text=360" alt="iPhone view 6" class="thumbnail" onclick="changeMainImage(this)">
+                    </div>
+                    <div class="main-image-container">
+                        <img src="https://via.placeholder.com/500x500/007185/ffffff?text=iPhone+15+Pro+Max" alt="iPhone 15 Pro Max" class="main-image" id="mainImage">
+                        <div class="image-zoom-hint">Roll over image to zoom in</div>
+                        <div class="image-actions">
+                            <button class="image-action-btn" onclick="openImageModal()">
+                                <i class="fas fa-expand"></i> View larger
+                            </button>
+                            <button class="image-action-btn" onclick="open360View()">
+                                <i class="fas fa-sync-alt"></i> 360° view
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info Section -->
+                <div class="product-info">
+                    <div class="product-brand">
+                        <a href="#" class="brand-link">Apple</a>
+                    </div>
+                    <h1 class="product-title">Apple iPhone 15 Pro Max (256GB) - Natural Titanium</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">4.5 out of 5 stars</span>
+                        <a href="#reviews" class="review-link">12,847 ratings</a>
+                        <span class="divider">|</span>
+                        <a href="#questions" class="qa-link">1,024 answered questions</a>
+                    </div>
+
+                    <div class="product-badges">
+                        <span class="badge amazon-choice">
+                            <i class="fas fa-award"></i> Amazon's Choice
+                        </span>
+                        <span class="badge climate-pledge">
+                            <i class="fas fa-leaf"></i> Climate Pledge Friendly
+                        </span>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="current-price">
+                            <span class="currency">$</span>
+                            <span class="price">1,199</span>
+                            <span class="cents">99</span>
+                        </div>
+                        <div class="price-details">
+                            <span class="list-price">List Price: <span class="strikethrough">$1,299.99</span></span>
+                            <span class="savings">You Save: $100.00 (8%)</span>
+                        </div>
+                        <div class="price-breakdown">
+                            <span class="shipping">FREE Returns</span>
+                            <span class="divider">|</span>
+                            <span class="prime-shipping">FREE delivery <strong>Tomorrow, Dec 12</strong> with Prime</span>
+                        </div>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Color:</label>
+                            <div class="color-options">
+                                <button class="color-option active" data-color="Natural Titanium" style="background: linear-gradient(45deg, #f5f5dc, #e6e6fa)"></button>
+                                <button class="color-option" data-color="Blue Titanium" style="background: linear-gradient(45deg, #4169e1, #87ceeb)"></button>
+                                <button class="color-option" data-color="White Titanium" style="background: linear-gradient(45deg, #ffffff, #f0f8ff)"></button>
+                                <button class="color-option" data-color="Black Titanium" style="background: linear-gradient(45deg, #2f2f2f, #696969)"></button>
+                            </div>
+                            <span class="selected-option">Natural Titanium</span>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">Storage:</label>
+                            <div class="storage-options">
+                                <button class="storage-option" data-storage="128GB" data-price="1099.99">128GB - $1,099.99</button>
+                                <button class="storage-option active" data-storage="256GB" data-price="1199.99">256GB - $1,199.99</button>
+                                <button class="storage-option" data-storage="512GB" data-price="1399.99">512GB - $1,399.99</button>
+                                <button class="storage-option" data-storage="1TB" data-price="1599.99">1TB - $1,599.99</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">Connectivity:</label>
+                            <div class="connectivity-options">
+                                <button class="connectivity-option active" data-connectivity="WiFi">WiFi</button>
+                                <button class="connectivity-option" data-connectivity="WiFi + Cellular">WiFi + Cellular (+$130)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="protection-plan">
+                        <h3>Protect your investment</h3>
+                        <div class="plan-options">
+                            <label class="plan-option">
+                                <input type="radio" name="protection" value="none" checked>
+                                <span class="checkmark"></span>
+                                <div class="plan-details">
+                                    <span class="plan-name">No protection plan</span>
+                                </div>
+                            </label>
+                            <label class="plan-option">
+                                <input type="radio" name="protection" value="applecare">
+                                <span class="checkmark"></span>
+                                <div class="plan-details">
+                                    <span class="plan-name">AppleCare+ for iPhone 15 Pro Max (2 Years)</span>
+                                    <span class="plan-price">$13.49/month or $269.99</span>
+                                    <span class="plan-description">Unlimited repairs for accidental damage</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="key-features">
+                        <h3>About this item</h3>
+                        <ul>
+                            <li>FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design with a textured matte-glass back. It also features a Ceramic Shield front that's tougher than any smartphone glass.</li>
+                            <li>ADVANCED CAMERA SYSTEM — Get incredible detail with a 48MP Main camera. Capture super sharp close-ups from farther away with the 5x Telephoto camera on iPhone 15 Pro Max.</li>
+                            <li>CUSTOMIZABLE ACTION BUTTON — Action button is a fast track to your favorite feature. Just set the one you want, like Silent mode, Camera, Voice Memo, Shortcut, and more.</li>
+                            <li>PRO CONNECTIVITY — The new USB-C connector lets you charge your Mac or iPad with the same cable you use to charge iPhone 15 Pro Max. With USB 3, you get a huge leap in data transfer speeds.</li>
+                            <li>A17 PRO CHIP — A17 Pro is an incredibly efficient chip that delivers amazing performance. Along with more cores in its GPU, A17 Pro supports console-quality gaming, with graphics and environments that are so immersive.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Purchase Options Section -->
+                <div class="purchase-options">
+                    <div class="purchase-box">
+                        <div class="price-display">
+                            <span class="current-price-large">$1,199.99</span>
+                            <div class="shipping-info">
+                                <i class="fas fa-truck"></i>
+                                <span>FREE delivery <strong>Tomorrow</strong></span>
+                            </div>
+                            <div class="prime-info">
+                                <i class="fab fa-amazon"></i>
+                                <span>Prime member exclusive</span>
+                            </div>
+                        </div>
+
+                        <div class="stock-info">
+                            <span class="in-stock">
+                                <i class="fas fa-check"></i>
+                                In Stock
+                            </span>
+                            <span class="quantity-left">Only 7 left in stock - order soon.</span>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <label for="quantity">Qty:</label>
+                            <select id="quantity" class="quantity-dropdown">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="10+">10+</option>
+                            </select>
+                        </div>
+
+                        <div class="purchase-buttons">
+                            <button class="btn-add-to-cart" onclick="addToCart()">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn-buy-now" onclick="buyNow()">
+                                <i class="fas fa-bolt"></i>
+                                Buy Now
+                            </button>
+                        </div>
+
+                        <div class="additional-options">
+                            <button class="option-btn" onclick="addToWishList()">
+                                <i class="far fa-heart"></i>
+                                Add to List
+                            </button>
+                            <button class="option-btn" onclick="addToRegistry()">
+                                <i class="fas fa-gift"></i>
+                                Add to Registry
+                            </button>
+                        </div>
+
+                        <div class="secure-transaction">
+                            <div class="secure-info">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure transaction</span>
+                            </div>
+                            <div class="seller-info">
+                                <span>Ships from</span>
+                                <strong>Amazon.com</strong>
+                            </div>
+                            <div class="seller-info">
+                                <span>Sold by</span>
+                                <strong>Amazon.com</strong>
+                            </div>
+                        </div>
+
+                        <div class="gift-options">
+                            <label class="gift-option">
+                                <input type="checkbox" id="giftWrap">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-gift"></i>
+                                Add gift options
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Alternative Buying Options -->
+                    <div class="alternative-options">
+                        <h4>Other Sellers on Amazon</h4>
+                        <div class="seller-option">
+                            <div class="seller-price">$1,189.99</div>
+                            <div class="seller-details">
+                                <span class="seller-name">TechDeals Pro</span>
+                                <div class="seller-rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(1,234)</span>
+                                </div>
+                                <span class="shipping">+ $9.99 shipping</span>
+                            </div>
+                        </div>
+                        
+                        <div class="seller-option">
+                            <div class="seller-price">$1,195.00</div>
+                            <div class="seller-details">
+                                <span class="seller-name">ElectronicsHub</span>
+                                <div class="seller-rating">
+                                    <span class="rating">★★★★★</span>
+                                    <span class="rating-count">(987)</span>
+                                </div>
+                                <span class="shipping">FREE shipping</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="see-all-offers">See all buying options</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" onclick="showTab('description')">Product Description</button>
+                    <button class="tab-btn" onclick="showTab('specifications')">Technical Details</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Customer Reviews</button>
+                    <button class="tab-btn" onclick="showTab('questions')">Questions & Answers</button>
+                </div>
+
+                <div id="description" class="tab-content active">
+                    <div class="product-description">
+                        <h3>Product Description</h3>
+                        <div class="description-content">
+                            <h4>iPhone 15 Pro Max. Forged in titanium.</h4>
+                            <p>iPhone 15 Pro Max is the first iPhone to feature an aerospace‑grade titanium design, using the same alloy that spacecraft use for missions to Mars. Titanium has one of the best strength‑to‑weight ratios of any metal, making these our lightest Pro models ever. You'll notice the difference the moment you pick one up.</p>
+                            
+                            <h4>Advanced camera system</h4>
+                            <p>The 48MP Main camera is more advanced than ever, capturing incredible detail and color. And you have even more framing flexibility with 2x Telephoto, which uses the quad-pixel sensor to deliver outstanding image quality.</p>
+                            
+                            <h4>5x Telephoto camera. iPhone 15 Pro Max only.</h4>
+                            <p>Now you can capture stunning close-ups from farther away. The 5x Telephoto camera features the longest optical zoom in iPhone history and 100% Focus Pixels for sharp, detailed shots.</p>
+                            
+                            <h4>Action button</h4>
+                            <p>Action button is a fast track to your favorite feature. Just set the one you want, like Silent mode, Camera, Voice Memo, Shortcut, and more. Then press and hold to launch the action.</p>
+                        </div>
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>6.7-inch Super Retina XDR display</h4>
+                                    <p>ProMotion technology with adaptive refresh rates up to 120Hz</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-camera"></i>
+                                    <h4>Pro camera system</h4>
+                                    <p>48MP Main | 12MP Ultra Wide | 12MP 5x Telephoto</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-microchip"></i>
+                                    <h4>A17 Pro chip</h4>
+                                    <p>6-core CPU with 2 performance and 4 efficiency cores</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-battery-three-quarters"></i>
+                                    <h4>All-day battery life</h4>
+                                    <p>Up to 29 hours of video playback</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="specifications" class="tab-content">
+                    <div class="specifications-content">
+                        <h3>Technical Specifications</h3>
+                        <div class="specs-grid">
+                            <div class="spec-category">
+                                <h4>Display</h4>
+                                <div class="spec-items">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Size:</span>
+                                        <span class="spec-value">6.7-inch (diagonal) all-screen OLED display</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Resolution:</span>
+                                        <span class="spec-value">2796×1290-pixel resolution at 460 ppi</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Technology:</span>
+                                        <span class="spec-value">Super Retina XDR display, ProMotion technology</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spec-category">
+                                <h4>Camera</h4>
+                                <div class="spec-items">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Main Camera:</span>
+                                        <span class="spec-value">48MP Main camera, ƒ/1.78 aperture</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Ultra Wide:</span>
+                                        <span class="spec-value">12MP Ultra Wide camera, ƒ/2.2 aperture</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Telephoto:</span>
+                                        <span class="spec-value">12MP 5× Telephoto camera, ƒ/2.8 aperture</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spec-category">
+                                <h4>Performance</h4>
+                                <div class="spec-items">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Chip:</span>
+                                        <span class="spec-value">A17 Pro chip with 6-core CPU</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Storage:</span>
+                                        <span class="spec-value">256GB, 512GB, or 1TB</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">RAM:</span>
+                                        <span class="spec-value">8GB</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spec-category">
+                                <h4>Connectivity</h4>
+                                <div class="spec-items">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Cellular:</span>
+                                        <span class="spec-value">5G (sub‑6 GHz and mmWave)</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Wi-Fi:</span>
+                                        <span class="spec-value">Wi‑Fi 6E (802.11ax)</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Bluetooth:</span>
+                                        <span class="spec-value">Bluetooth 5.3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spec-category">
+                                <h4>Physical</h4>
+                                <div class="spec-items">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Dimensions:</span>
+                                        <span class="spec-value">6.29 × 3.02 × 0.32 inches</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Weight:</span>
+                                        <span class="spec-value">7.81 ounces (221 grams)</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Materials:</span>
+                                        <span class="spec-value">Titanium design with textured matte glass back</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reviews" class="tab-content">
+                    <div class="reviews-section">
+                        <div class="reviews-header">
+                            <h3>Customer Reviews</h3>
+                            <div class="review-summary">
+                                <div class="rating-breakdown">
+                                    <div class="overall-rating">
+                                        <span class="rating-score">4.5</span>
+                                        <div class="stars-large">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="total-reviews">12,847 global ratings</span>
+                                    </div>
+                                    <div class="rating-bars">
+                                        <div class="rating-bar">
+                                            <span class="star-count">5 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 70%"></div>
+                                            </div>
+                                            <span class="percentage">70%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="star-count">4 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 18%"></div>
+                                            </div>
+                                            <span class="percentage">18%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="star-count">3 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 7%"></div>
+                                            </div>
+                                            <span class="percentage">7%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="star-count">2 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 3%"></div>
+                                            </div>
+                                            <span class="percentage">3%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="star-count">1 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 2%"></div>
+                                            </div>
+                                            <span class="percentage">2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-filters">
+                            <button class="filter-btn active">All reviews</button>
+                            <button class="filter-btn">Most recent</button>
+                            <button class="filter-btn">Top reviews</button>
+                            <button class="filter-btn">Verified purchase only</button>
+                            <button class="filter-btn">With photos</button>
+                        </div>
+
+                        <div class="individual-reviews">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="https://via.placeholder.com/40x40/007185/ffffff?text=M" alt="Reviewer" class="reviewer-avatar">
+                                        <div class="reviewer-details">
+                                            <span class="reviewer-name">Mike Johnson</span>
+                                            <span class="verified-purchase">Verified Purchase</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-meta">
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">December 1, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4 class="review-title">Incredible camera quality and performance</h4>
+                                    <p class="review-text">The iPhone 15 Pro Max exceeded my expectations. The titanium build feels premium and the weight reduction is noticeable. The camera system is outstanding - the 5x zoom is a game changer for photography. Battery life easily lasts a full day of heavy use.</p>
+                                    <div class="review-images">
+                                        <img src="https://via.placeholder.com/100x100/007185/ffffff?text=Photo1" alt="Review photo 1">
+                                        <img src="https://via.placeholder.com/100x100/232F3E/ffffff?text=Photo2" alt="Review photo 2">
+                                    </div>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="helpful-btn">
+                                        <i class="far fa-thumbs-up"></i>
+                                        Helpful (127)
+                                    </button>
+                                    <button class="report-btn">Report</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="https://via.placeholder.com/40x40/FF6B35/ffffff?text=S" alt="Reviewer" class="reviewer-avatar">
+                                        <div class="reviewer-details">
+                                            <span class="reviewer-name">Sarah Williams</span>
+                                            <span class="verified-purchase">Verified Purchase</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-meta">
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="review-date">November 28, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4 class="review-title">Great upgrade from iPhone 13 Pro</h4>
+                                    <p class="review-text">Love the new Action Button feature and the USB-C is finally here! The display is gorgeous and the titanium feels more durable. Only complaint is the price, but the features justify it. Face ID works flawlessly and the camera improvements are noticeable in low light.</p>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="helpful-btn">
+                                        <i class="far fa-thumbs-up"></i>
+                                        Helpful (89)
+                                    </button>
+                                    <button class="report-btn">Report</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="https://via.placeholder.com/40x40/146EB4/ffffff?text=D" alt="Reviewer" class="reviewer-avatar">
+                                        <div class="reviewer-details">
+                                            <span class="reviewer-name">David Chen</span>
+                                            <span class="verified-purchase">Verified Purchase</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-meta">
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">November 25, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4 class="review-title">Perfect for content creators</h4>
+                                    <p class="review-text">As a YouTuber, the video recording capabilities are amazing. 4K ProRes recording is smooth and the stabilization is excellent. The A17 Pro handles editing apps without any lag. The 5x telephoto is perfect for getting those detail shots without getting too close to subjects.</p>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="helpful-btn">
+                                        <i class="far fa-thumbs-up"></i>
+                                        Helpful (156)
+                                    </button>
+                                    <button class="report-btn">Report</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="load-more-reviews">See more reviews</button>
+                    </div>
+                </div>
+
+                <div id="questions" class="tab-content">
+                    <div class="qa-section">
+                        <div class="qa-header">
+                            <h3>Questions & Answers</h3>
+                            <button class="ask-question-btn" onclick="openAskQuestionModal()">Ask a question</button>
+                        </div>
+
+                        <div class="qa-search">
+                            <input type="text" placeholder="Search questions and answers" class="qa-search-input">
+                            <button class="qa-search-btn">Search</button>
+                        </div>
+
+                        <div class="qa-list">
+                            <div class="qa-item">
+                                <div class="question">
+                                    <h4>Q: Does this phone support MagSafe charging?</h4>
+                                    <span class="question-meta">Asked by John D. on November 15, 2023</span>
+                                </div>
+                                <div class="answer">
+                                    <p><strong>A:</strong> Yes, the iPhone 15 Pro Max supports MagSafe wireless charging up to 15W and Qi wireless charging up to 7.5W. It also supports fast charging with USB-C Power Delivery.</p>
+                                    <span class="answer-meta">By Apple Customer Service on November 15, 2023</span>
+                                    <div class="answer-actions">
+                                        <button class="helpful-btn">Helpful (45)</button>
+                                        <button class="report-btn">Report</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <div class="question">
+                                    <h4>Q: Is the titanium finish prone to scratches?</h4>
+                                    <span class="question-meta">Asked by Maria S. on November 20, 2023</span>
+                                </div>
+                                <div class="answer">
+                                    <p><strong>A:</strong> The titanium finish is quite durable, but like any material, it can show micro-scratches over time with heavy use. I recommend using a case for maximum protection. The titanium is definitely more scratch-resistant than previous aluminum models.</p>
+                                    <span class="answer-meta">By verified buyer TechReviewer123 on November 21, 2023</span>
+                                    <div class="answer-actions">
+                                        <button class="helpful-btn">Helpful (32)</button>
+                                        <button class="report-btn">Report</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <div class="question">
+                                    <h4>Q: What's included in the box?</h4>
+                                    <span class="question-meta">Asked by Robert K. on November 10, 2023</span>
+                                </div>
+                                <div class="answer">
+                                    <p><strong>A:</strong> The box includes the iPhone 15 Pro Max, a USB-C to USB-C cable, and documentation. No power adapter or EarPods are included. You'll need to purchase these separately or use compatible ones you already have.</p>
+                                    <span class="answer-meta">By Apple Customer Service on November 10, 2023</span>
+                                    <div class="answer-actions">
+                                        <button class="helpful-btn">Helpful (67)</button>
+                                        <button class="report-btn">Report</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <div class="question">
+                                    <h4>Q: How much better is the battery life compared to iPhone 14 Pro Max?</h4>
+                                    <span class="question-meta">Asked by Jennifer L. on December 1, 2023</span>
+                                </div>
+                                <div class="answer">
+                                    <p><strong>A:</strong> In my experience, it's about 2-3 hours better than the 14 Pro Max. I easily get through a full day of heavy usage including gaming, photography, and video streaming. The A17 Pro chip is more efficient despite being more powerful.</p>
+                                    <span class="answer-meta">By verified buyer PowerUser2023 on December 2, 2023</span>
+                                    <div class="answer-actions">
+                                        <button class="helpful-btn">Helpful (28)</button>
+                                        <button class="report-btn">Report</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="load-more-qa">See more questions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h3>Customers who viewed this item also viewed</h3>
+                <div class="related-grid">
+                    <div class="related-item">
+                        <img src="https://via.placeholder.com/200x200/007185/ffffff?text=iPhone+15+Pro" alt="iPhone 15 Pro">
+                        <h4>Apple iPhone 15 Pro (128GB)</h4>
+                        <div class="related-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(8,234)</span>
+                        </div>
+                        <span class="related-price">$999.99</span>
+                    </div>
+                    <div class="related-item">
+                        <img src="https://via.placeholder.com/200x200/232F3E/ffffff?text=AirPods+Pro" alt="AirPods Pro">
+                        <h4>Apple AirPods Pro (2nd Gen)</h4>
+                        <div class="related-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(12,567)</span>
+                        </div>
+                        <span class="related-price">$249.99</span>
+                    </div>
+                    <div class="related-item">
+                        <img src="https://via.placeholder.com/200x200/FF6B35/ffffff?text=MagSafe" alt="MagSafe Charger">
+                        <h4>Apple MagSafe Charger</h4>
+                        <div class="related-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(5,432)</span>
+                        </div>
+                        <span class="related-price">$39.99</span>
+                    </div>
+                    <div class="related-item">
+                        <img src="https://via.placeholder.com/200x200/146EB4/ffffff?text=Case" alt="iPhone Case">
+                        <h4>Apple Leather Case with MagSafe</h4>
+                        <div class="related-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(3,789)</span>
+                        </div>
+                        <span class="related-price">$59.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frequently Bought Together -->
+            <div class="frequently-bought">
+                <h3>Frequently bought together</h3>
+                <div class="bundle-container">
+                    <div class="bundle-items">
+                        <div class="bundle-item">
+                            <img src="https://via.placeholder.com/150x150/007185/ffffff?text=iPhone+15+Pro+Max" alt="iPhone 15 Pro Max">
+                            <span class="bundle-price">$1,199.99</span>
+                        </div>
+                        <div class="bundle-plus">+</div>
+                        <div class="bundle-item">
+                            <img src="https://via.placeholder.com/150x150/232F3E/ffffff?text=AirPods+Pro" alt="AirPods Pro">
+                            <span class="bundle-price">$249.99</span>
+                        </div>
+                        <div class="bundle-plus">+</div>
+                        <div class="bundle-item">
+                            <img src="https://via.placeholder.com/150x150/FF6B35/ffffff?text=MagSafe" alt="MagSafe Charger">
+                            <span class="bundle-price">$39.99</span>
+                        </div>
+                    </div>
+                    <div class="bundle-summary">
+                        <div class="bundle-total">
+                            <span class="total-label">Total price:</span>
+                            <span class="total-price">$1,489.97</span>
+                        </div>
+                        <div class="bundle-savings">
+                            <span class="savings-text">Save $50.00 when bought together</span>
+                        </div>
+                        <button class="bundle-btn">Add all three to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content image-modal-content">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img src="" alt="Product Image" id="modalImage">
+            <div class="image-nav">
+                <button class="nav-btn prev-btn" onclick="prevImage()">❮</button>
+                <button class="nav-btn next-btn" onclick="nextImage()">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask Question Modal -->
+    <div id="askQuestionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAskQuestionModal()">&times;</span>
+            <h2>Ask a Question</h2>
+            <form class="question-form">
+                <div class="form-group">
+                    <label for="questionText">Your Question:</label>
+                    <textarea id="questionText" placeholder="What would you like to know about this product?" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="questionEmail">Your Email (optional):</label>
+                    <input type="email" id="questionEmail" placeholder="email@example.com">
+                    <small>We'll email you when your question is answered</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeAskQuestionModal()">Cancel</button>
+                    <button type="submit">Submit Question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Product detail specific JavaScript
+        function changeMainImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = thumbnail.src.replace('80x80', '500x500');
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function addToCart() {
+            // Add product to cart logic
+            alert('Product added to cart!');
+        }
+
+        function buyNow() {
+            // Redirect to checkout with this product
+            window.location.href = 'checkout.html';
+        }
+
+        function addToWishList() {
+            alert('Product added to your wish list!');
+        }
+
+        function addToRegistry() {
+            window.location.href = 'registry.html';
+        }
+
+        function openImageModal() {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('modalImage').src = document.getElementById('mainImage').src;
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function open360View() {
+            alert('360° view feature coming soon!');
+        }
+
+        function openAskQuestionModal() {
+            document.getElementById('askQuestionModal').style.display = 'block';
+        }
+
+        function closeAskQuestionModal() {
+            document.getElementById('askQuestionModal').style.display = 'none';
+        }
+
+        // Color option selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelector('.selected-option').textContent = this.dataset.color;
+            });
+        });
+
+        // Storage option selection
+        document.querySelectorAll('.storage-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.storage-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                // Update price based on storage selection
+                const price = this.dataset.price;
+                document.querySelector('.current-price-large').textContent = '$' + price;
+                document.querySelector('.price').textContent = price.split('.')[0];
+            });
+        });
+
+        // Connectivity option selection
+        document.querySelectorAll('.connectivity-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.connectivity-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const imageModal = document.getElementById('imageModal');
+            const questionModal = document.getElementById('askQuestionModal');
+            
+            if (event.target == imageModal) {
+                imageModal.style.display = 'none';
+            }
+            if (event.target == questionModal) {
+                questionModal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

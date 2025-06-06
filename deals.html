@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Deals - Amazon Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="amazon_logo.png" alt="Amazon Logo">
+                </a>
+            </div>
+
+            <div class="nav-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="location-top">Deliver to</span>
+                    <span class="location-bottom">India</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                    <option>Fashion</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <span class="nav-item-top">Hello, sign in</span>
+                    <span class="nav-item-bottom">Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-item-top">Returns</span>
+                    <span class="nav-item-bottom">& Orders</span>
+                </div>
+                <div class="nav-cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-all border">
+                <i class="fas fa-bars"></i>
+                All
+            </div>
+            <div class="panel-ops">
+                <p class="border" onclick="window.location.href='deals.html'">todays deals</p>
+                <p class="border" onclick="window.location.href='customer-service.html'">customer service</p>
+                <p class="border" onclick="window.location.href='registry.html'">Registry</p>
+                <p class="border" onclick="window.location.href='gift-cards.html'">Gift cards</p>
+                <p class="border" onclick="window.location.href='sell.html'">Sell</p>
+            </div>
+            <div class="panel-deals border">
+                shop deals in electronics
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="deals-main">
+        <div class="deals-hero">
+            <h1>Today's Deals</h1>
+            <p>Save big on top products with limited-time offers</p>
+        </div>
+
+        <!-- Deal Filters -->
+        <div class="deals-filters">
+            <div class="filter-group">
+                <h3>Filter by:</h3>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All Deals</button>
+                    <button class="filter-btn" data-filter="lightning">Lightning Deals</button>
+                    <button class="filter-btn" data-filter="today">Today Only</button>
+                    <button class="filter-btn" data-filter="savings">Best Savings</button>
+                </div>
+            </div>
+            <div class="sort-group">
+                <label for="sort-deals">Sort by:</label>
+                <select id="sort-deals">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="discount">% Off</option>
+                    <option value="ending-soon">Ending Soon</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Featured Deals -->
+        <section class="featured-deals">
+            <h2>Featured Lightning Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card lightning-deal">
+                    <div class="deal-badge">Lightning Deal</div>
+                    <div class="deal-timer">
+                        <i class="fas fa-clock"></i>
+                        <span class="timer-text">Ends in 02:45:30</span>
+                    </div>
+                    <img src="box1_image.jpg" alt="Electronics Deal">
+                    <div class="deal-info">
+                        <h3>Up to 60% off Electronics</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹2,999</span>
+                            <span class="original-price">₹7,499</span>
+                            <span class="discount">60% off</span>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="claimed">65% claimed</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal1', name: 'Electronics Bundle', price: 2999, image: 'box1_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card today-deal">
+                    <div class="deal-badge">Today's Deal</div>
+                    <img src="box2_image.jpg" alt="Fashion Deal">
+                    <div class="deal-info">
+                        <h3>Fashion Essentials</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹1,499</span>
+                            <span class="original-price">₹2,999</span>
+                            <span class="discount">50% off</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal2', name: 'Fashion Essentials', price: 1499, image: 'box2_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card lightning-deal">
+                    <div class="deal-badge">Lightning Deal</div>
+                    <div class="deal-timer">
+                        <i class="fas fa-clock"></i>
+                        <span class="timer-text">Ends in 01:15:45</span>
+                    </div>
+                    <img src="box3_image.jpg" alt="Home Deal">
+                    <div class="deal-info">
+                        <h3>Home & Kitchen</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹3,999</span>
+                            <span class="original-price">₹9,999</span>
+                            <span class="discount">60% off</span>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                            <span class="claimed">42% claimed</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal3', name: 'Home & Kitchen Set', price: 3999, image: 'box3_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card savings-deal">
+                    <div class="deal-badge">Best Savings</div>
+                    <img src="box4_image.jpg" alt="Books Deal">
+                    <div class="deal-info">
+                        <h3>Best Selling Books</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹299</span>
+                            <span class="original-price">₹799</span>
+                            <span class="discount">62% off</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal4', name: 'Best Selling Books', price: 299, image: 'box4_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Deals -->
+        <section class="all-deals">
+            <h2>All Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card today-deal">
+                    <div class="deal-badge">Today's Deal</div>
+                    <img src="box5_image.jpg" alt="Sports Deal">
+                    <div class="deal-info">
+                        <h3>Sports & Fitness</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹1,999</span>
+                            <span class="original-price">₹3,999</span>
+                            <span class="discount">50% off</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal5', name: 'Sports Equipment', price: 1999, image: 'box5_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card lightning-deal">
+                    <div class="deal-badge">Lightning Deal</div>
+                    <div class="deal-timer">
+                        <i class="fas fa-clock"></i>
+                        <span class="timer-text">Ends in 03:22:15</span>
+                    </div>
+                    <img src="box6_image.jpg" alt="Beauty Deal">
+                    <div class="deal-info">
+                        <h3>Beauty & Personal Care</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹799</span>
+                            <span class="original-price">₹1,599</span>
+                            <span class="discount">50% off</span>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <span class="claimed">78% claimed</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal6', name: 'Beauty Products', price: 799, image: 'box6_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card savings-deal">
+                    <div class="deal-badge">Best Savings</div>
+                    <img src="box7_image.jpg" alt="Tech Deal">
+                    <div class="deal-info">
+                        <h3>Tech Accessories</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹599</span>
+                            <span class="original-price">₹1,499</span>
+                            <span class="discount">60% off</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal7', name: 'Tech Accessories', price: 599, image: 'box7_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deal-card today-deal">
+                    <div class="deal-badge">Today's Deal</div>
+                    <img src="box8_image.jpg" alt="Toys Deal">
+                    <div class="deal-info">
+                        <h3>Toys & Games</h3>
+                        <div class="price-info">
+                            <span class="current-price">₹899</span>
+                            <span class="original-price">₹1,999</span>
+                            <span class="discount">55% off</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'deal8', name: 'Toys & Games', price: 899, image: 'box8_image.jpg'})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="foot-panel" onclick="scrollToTop()">Back to top</div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Amazon Devices</a>
+                <a href="#">Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="sell.html">Sell products on Amazon</a>
+                <a href="#">Sell on Amazon Business</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Self-Publish with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="account.html">Your Account</a>
+                <a href="orders.html">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+                <a href="#">Returns & Replacements</a>
+                <a href="customer-service.html">Help</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Deal-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            initializeDealsPage();
+        });
+
+        function initializeDealsPage() {
+            // Timer functionality for lightning deals
+            const timers = document.querySelectorAll('.timer-text');
+            timers.forEach(timer => {
+                updateTimer(timer);
+                setInterval(() => updateTimer(timer), 1000);
+            });
+
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterDeals(this.dataset.filter);
+                });
+            });
+
+            // Sort functionality
+            const sortSelect = document.getElementById('sort-deals');
+            sortSelect.addEventListener('change', function() {
+                sortDeals(this.value);
+            });
+        }
+
+        function updateTimer(timerElement) {
+            const timeText = timerElement.textContent;
+            const timeParts = timeText.match(/(\d+):(\d+):(\d+)/);
+            if (timeParts) {
+                let hours = parseInt(timeParts[1]);
+                let minutes = parseInt(timeParts[2]);
+                let seconds = parseInt(timeParts[3]);
+
+                if (seconds > 0) {
+                    seconds--;
+                } else if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                }
+
+                const formattedTime = `Ends in ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                timerElement.textContent = formattedTime;
+            }
+        }
+
+        function filterDeals(filter) {
+            const dealCards = document.querySelectorAll('.deal-card');
+            dealCards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const hasClass = card.classList.contains(filter + '-deal');
+                    card.style.display = hasClass ? 'block' : 'none';
+                }
+            });
+        }
+
+        function sortDeals(sortBy) {
+            const dealGrids = document.querySelectorAll('.deals-grid');
+            dealGrids.forEach(grid => {
+                const deals = Array.from(grid.querySelectorAll('.deal-card'));
+                deals.sort((a, b) => {
+                    switch(sortBy) {
+                        case 'price-low':
+                            return getPrice(a) - getPrice(b);
+                        case 'price-high':
+                            return getPrice(b) - getPrice(a);
+                        case 'discount':
+                            return getDiscount(b) - getDiscount(a);
+                        default:
+                            return 0;
+                    }
+                });
+                deals.forEach(deal => grid.appendChild(deal));
+            });
+        }
+
+        function getPrice(dealCard) {
+            const priceText = dealCard.querySelector('.current-price').textContent;
+            return parseInt(priceText.replace(/[₹,]/g, ''));
+        }
+
+        function getDiscount(dealCard) {
+            const discountText = dealCard.querySelector('.discount').textContent;
+            return parseInt(discountText.replace(/[%off\s]/g, ''));
+        }
+    </script>
+</body>
+</html>

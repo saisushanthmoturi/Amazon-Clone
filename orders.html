@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders - Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .orders-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 80vh;
+        }
+        
+        .orders-header {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .order-filters {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #007185;
+            color: white;
+            border-color: #007185;
+        }
+        
+        .order-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .order-header {
+            background: #f8f8f8;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .order-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .order-info-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .order-info-value {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .order-items {
+            padding: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-image {
+            width: 80px;
+            height: 80px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .item-price {
+            color: #B12704;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .item-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-delivered {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-shipping {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .status-processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .order-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .action-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .action-btn:hover {
+            background: #f0f0f0;
+        }
+        
+        .action-btn.primary {
+            background: #007185;
+            color: white;
+            border-color: #007185;
+        }
+        
+        .action-btn.primary:hover {
+            background: #005a6b;
+        }
+        
+        .empty-orders {
+            background: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 8px;
+        }
+        
+        .empty-orders i {
+            font-size: 80px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .start-shopping-btn {
+            background-color: #ff9900;
+            color: #0f1111;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .start-shopping-btn:hover {
+            background-color: #e88900;
+        }
+        
+        @media (max-width: 768px) {
+            .order-header {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .item-image {
+                margin: 0 0 15px 0;
+            }
+            
+            .order-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border" onclick="window.location.href='index.html'">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">deliver-to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-sec">india</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select name="" id="" class="search-select">
+                    <option value="">all</option>
+                </select>
+                <input type="text" placeholder="search amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-signin border" onclick="window.location.href='signin.html'">
+                <p class=""><span>hello,sign in</span></p>
+                <p class="nav-second">accounts and lists</p>
+            </div>
+            <div class="nav-return border">
+                <p class=""><span>returns</span></p>
+                <p class="nav-second">& orders</p>
+            </div>
+            <div class="nav-cart border" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+                Cart
+            </div>
+        </div>
+    </header>
+
+    <div class="orders-container">
+        <div class="orders-header">
+            <h1><i class="fas fa-box"></i> Your Orders</h1>
+            <p>Track packages, view order details, and manage your orders</p>
+        </div>
+        
+        <div class="order-filters">
+            <span style="font-weight: bold;">Filter orders:</span>
+            <button class="filter-btn active" data-filter="all">All Orders</button>
+            <button class="filter-btn" data-filter="delivered">Delivered</button>
+            <button class="filter-btn" data-filter="shipping">Shipping</button>
+            <button class="filter-btn" data-filter="processing">Processing</button>
+            <button class="filter-btn" data-filter="cancelled">Cancelled</button>
+        </div>
+        
+        <div id="ordersContent">
+            <!-- Orders will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Sample order data
+        const sampleOrders = [
+            {
+                id: 'ORD-001',
+                date: '2024-01-15',
+                total: 129.99,
+                status: 'delivered',
+                deliveryDate: '2024-01-18',
+                items: [
+                    {
+                        name: 'Wireless Headphones',
+                        price: 129.99,
+                        image: 'box4_image.jpg',
+                        status: 'delivered'
+                    }
+                ]
+            },
+            {
+                id: 'ORD-002',
+                date: '2024-01-20',
+                total: 79.98,
+                status: 'shipping',
+                estimatedDelivery: '2024-01-25',
+                items: [
+                    {
+                        name: 'Vitamin D3 Supplement',
+                        price: 19.99,
+                        image: 'box1_image.jpg',
+                        status: 'shipping'
+                    },
+                    {
+                        name: 'Bluetooth Speaker',
+                        price: 59.99,
+                        image: 'box4_image.jpg',
+                        status: 'shipping'
+                    }
+                ]
+            },
+            {
+                id: 'ORD-003',
+                date: '2024-01-22',
+                total: 45.99,
+                status: 'processing',
+                estimatedDelivery: '2024-01-28',
+                items: [
+                    {
+                        name: 'Summer Dress',
+                        price: 45.99,
+                        image: 'box8_image.jpg',
+                        status: 'processing'
+                    }
+                ]
+            }
+        ];
+        
+        let currentFilter = 'all';
+        
+        function loadOrders() {
+            const ordersContent = document.getElementById('ordersContent');
+            
+            // Check if user is logged in (simulate)
+            const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+            
+            if (!isLoggedIn) {
+                ordersContent.innerHTML = `
+                    <div class="empty-orders">
+                        <i class="fas fa-user-lock"></i>
+                        <h2>Please sign in to view your orders</h2>
+                        <p>You need to be signed in to access your order history</p>
+                        <button class="start-shopping-btn" onclick="window.location.href='signin.html'">
+                            Sign In
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const filteredOrders = currentFilter === 'all' 
+                ? sampleOrders 
+                : sampleOrders.filter(order => order.status === currentFilter);
+            
+            if (filteredOrders.length === 0) {
+                ordersContent.innerHTML = `
+                    <div class="empty-orders">
+                        <i class="fas fa-box-open"></i>
+                        <h2>No orders found</h2>
+                        <p>You haven't placed any orders yet. Start shopping to see your orders here.</p>
+                        <button class="start-shopping-btn" onclick="window.location.href='index.html'">
+                            Start Shopping
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            ordersContent.innerHTML = filteredOrders.map(order => `
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <div class="order-info-label">Order Placed</div>
+                            <div class="order-info-value">${formatDate(order.date)}</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">Total</div>
+                            <div class="order-info-value">$${order.total.toFixed(2)}</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">Ship To</div>
+                            <div class="order-info-value">Your Address</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">Order #</div>
+                            <div class="order-info-value">${order.id}</div>
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        ${order.items.map(item => `
+                            <div class="order-item">
+                                <div class="item-image" style="background-image: url('${item.image}')"></div>
+                                <div class="item-details">
+                                    <div class="item-name">${item.name}</div>
+                                    <div class="item-price">$${item.price.toFixed(2)}</div>
+                                    <div class="item-status status-${item.status}">
+                                        ${getStatusText(item.status)}
+                                    </div>
+                                    <div class="order-actions">
+                                        ${getActionButtons(order, item)}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+        
+        function getStatusText(status) {
+            const statusTexts = {
+                delivered: 'Delivered',
+                shipping: 'Out for Delivery',
+                processing: 'Processing',
+                cancelled: 'Cancelled'
+            };
+            return statusTexts[status] || status;
+        }
+        
+        function getActionButtons(order, item) {
+            let buttons = '<a href="#" class="action-btn">View Details</a>';
+            
+            if (item.status === 'delivered') {
+                buttons += '<a href="#" class="action-btn">Buy Again</a>';
+                buttons += '<a href="#" class="action-btn">Return Item</a>';
+                buttons += '<a href="#" class="action-btn">Write Review</a>';
+            } else if (item.status === 'shipping') {
+                buttons += '<a href="#" class="action-btn primary">Track Package</a>';
+            } else if (item.status === 'processing') {
+                buttons += '<a href="#" class="action-btn">Cancel Item</a>';
+            }
+            
+            return buttons;
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrders();
+            updateCartCount();
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    loadOrders();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

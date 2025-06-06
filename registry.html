@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registry - Amazon Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="amazon_logo.png" alt="Amazon Logo">
+                </a>
+            </div>
+
+            <div class="nav-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="location-top">Deliver to</span>
+                    <span class="location-bottom">India</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                    <option>Fashion</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <span class="nav-item-top">Hello, sign in</span>
+                    <span class="nav-item-bottom">Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-item-top">Returns</span>
+                    <span class="nav-item-bottom">& Orders</span>
+                </div>
+                <div class="nav-cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-left">
+                <i class="fas fa-bars"></i>
+                <a href="products.html">All</a>
+            </div>
+            <div class="panel-right">
+                <a href="deals.html">Today's Deals</a>
+                <a href="customer-service.html">Customer Service</a>
+                <a href="registry.html" class="active">Registry</a>
+                <a href="gift-cards.html">Gift Cards</a>
+                <a href="#">Sell</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="registry-main">
+        <div class="registry-hero">
+            <h1>Wedding & Gift Registry</h1>
+            <p>Create the perfect registry for your special occasion</p>
+        </div>
+
+        <!-- Registry Navigation -->
+        <div class="registry-nav">
+            <button class="registry-nav-btn active" onclick="showRegistrySection('create')">Create Registry</button>
+            <button class="registry-nav-btn" onclick="showRegistrySection('find')">Find Registry</button>
+            <button class="registry-nav-btn" onclick="showRegistrySection('manage')">My Registries</button>
+        </div>
+
+        <!-- Create Registry Section -->
+        <section id="create" class="registry-section active">
+            <div class="registry-types">
+                <h2>Choose Your Registry Type</h2>
+                <div class="registry-type-grid">
+                    <div class="registry-type-card" onclick="selectRegistryType('wedding')">
+                        <i class="fas fa-ring"></i>
+                        <h3>Wedding Registry</h3>
+                        <p>Perfect for your special day</p>
+                    </div>
+                    <div class="registry-type-card" onclick="selectRegistryType('baby')">
+                        <i class="fas fa-baby"></i>
+                        <h3>Baby Registry</h3>
+                        <p>Welcome your little one</p>
+                    </div>
+                    <div class="registry-type-card" onclick="selectRegistryType('birthday')">
+                        <i class="fas fa-birthday-cake"></i>
+                        <h3>Birthday Registry</h3>
+                        <p>Celebrate another year</p>
+                    </div>
+                    <div class="registry-type-card" onclick="selectRegistryType('housewarming')">
+                        <i class="fas fa-home"></i>
+                        <h3>Housewarming</h3>
+                        <p>New home essentials</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registry Creation Form -->
+            <div id="registryForm" class="registry-form" style="display: none;">
+                <h2>Create Your Registry</h2>
+                <form id="createRegistryForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="registry-name">Registry Name:</label>
+                            <input type="text" id="registry-name" placeholder="Enter registry name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Event Date:</label>
+                            <input type="date" id="event-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="registrant-name">Your Name:</label>
+                            <input type="text" id="registrant-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="partner-name">Partner's Name (Optional):</label>
+                            <input type="text" id="partner-name" placeholder="Enter partner's name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registry-description">Description:</label>
+                        <textarea id="registry-description" placeholder="Tell your story..." rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="privacy-setting">Privacy Setting:</label>
+                            <select id="privacy-setting" required>
+                                <option value="public">Public - Anyone can find</option>
+                                <option value="private">Private - Only with link</option>
+                                <option value="friends">Friends & Family Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-address">Shipping Address:</label>
+                            <select id="shipping-address" required>
+                                <option value="">Select address</option>
+                                <option value="home">Home Address</option>
+                                <option value="work">Work Address</option>
+                                <option value="new">Add New Address</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="create-registry-btn">Create Registry</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Find Registry Section -->
+        <section id="find" class="registry-section">
+            <h2>Find a Registry</h2>
+            <div class="find-registry-container">
+                <div class="search-registry">
+                    <div class="search-options">
+                        <div class="form-group">
+                            <label for="search-by">Search by:</label>
+                            <select id="search-by">
+                                <option value="name">Name</option>
+                                <option value="email">Email</option>
+                                <option value="registry-id">Registry ID</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-input">Search:</label>
+                            <input type="text" id="search-input" placeholder="Enter search term">
+                        </div>
+                        <button class="search-registry-btn" onclick="searchRegistry()">Search</button>
+                    </div>
+                </div>
+
+                <div class="registry-results" id="registryResults" style="display: none;">
+                    <h3>Search Results</h3>
+                    <div class="registry-list">
+                        <!-- Sample registry results -->
+                        <div class="registry-item">
+                            <div class="registry-info">
+                                <h4>John & Sarah's Wedding Registry</h4>
+                                <p><i class="fas fa-calendar"></i> Wedding Date: July 15, 2025</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                            </div>
+                            <button class="view-registry-btn" onclick="viewRegistry('wedding123')">View Registry</button>
+                        </div>
+                        <div class="registry-item">
+                            <div class="registry-info">
+                                <h4>Emma's Baby Registry</h4>
+                                <p><i class="fas fa-calendar"></i> Due Date: September 20, 2025</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
+                            </div>
+                            <button class="view-registry-btn" onclick="viewRegistry('baby456')">View Registry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Registries Section -->
+        <section id="manage" class="registry-section">
+            <h2>My Registries</h2>
+            <div class="my-registries-container">
+                <div class="no-registries" id="noRegistries">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>No Registries Yet</h3>
+                    <p>Create your first registry to get started</p>
+                    <button class="create-first-registry-btn" onclick="showRegistrySection('create')">Create Registry</button>
+                </div>
+
+                <div class="registries-list" id="registriesList" style="display: none;">
+                    <!-- Registry items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Registry Items -->
+        <section class="popular-items">
+            <h2>Popular Registry Items</h2>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="box1_image.jpg" alt="Electronics">
+                    <div class="item-info">
+                        <h3>Smart Home Devices</h3>
+                        <p>₹5,999 - ₹25,999</p>
+                        <button class="add-to-registry-btn" onclick="addToRegistry('smart-home')">Add to Registry</button>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="box2_image.jpg" alt="Kitchen">
+                    <div class="item-info">
+                        <h3>Kitchen Appliances</h3>
+                        <p>₹2,999 - ₹15,999</p>
+                        <button class="add-to-registry-btn" onclick="addToRegistry('kitchen')">Add to Registry</button>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="box3_image.jpg" alt="Home Decor">
+                    <div class="item-info">
+                        <h3>Home Decor</h3>
+                        <p>₹999 - ₹8,999</p>
+                        <button class="add-to-registry-btn" onclick="addToRegistry('decor')">Add to Registry</button>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="box4_image.jpg" alt="Books">
+                    <div class="item-info">
+                        <h3>Books & Media</h3>
+                        <p>₹299 - ₹1,999</p>
+                        <button class="add-to-registry-btn" onclick="addToRegistry('books')">Add to Registry</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Registry Details Modal -->
+    <div id="registryModal" class="modal">
+        <div class="modal-content registry-modal">
+            <span class="close" onclick="closeModal('registryModal')">&times;</span>
+            <div class="registry-header">
+                <h2 id="modalRegistryName">Registry Name</h2>
+                <div class="registry-meta">
+                    <p><i class="fas fa-calendar"></i> <span id="modalEventDate">Event Date</span></p>
+                    <p><i class="fas fa-user"></i> <span id="modalRegistrant">Registrant</span></p>
+                </div>
+            </div>
+            <div class="registry-progress">
+                <h3>Registry Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <p>45% of items purchased</p>
+            </div>
+            <div class="registry-items">
+                <h3>Registry Items</h3>
+                <div class="modal-items-list">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="foot-panel" onclick="scrollToTop()">Back to top</div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Amazon Devices</a>
+                <a href="#">Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="sell.html">Sell products on Amazon</a>
+                <a href="#">Sell on Amazon Business</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Self-Publish with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="account.html">Your Account</a>
+                <a href="orders.html">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+                <a href="#">Returns & Replacements</a>
+                <a href="customer-service.html">Help</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let currentRegistryType = null;
+        let userRegistries = JSON.parse(localStorage.getItem('userRegistries')) || [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            loadUserRegistries();
+            
+            // Set minimum date for event
+            const today = new Date();
+            document.getElementById('event-date').min = today.toISOString().split('T')[0];
+        });
+
+        function showRegistrySection(section) {
+            // Update navigation
+            document.querySelectorAll('.registry-nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="showRegistrySection('${section}')"]`).classList.add('active');
+            
+            // Update sections
+            document.querySelectorAll('.registry-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
+
+        function selectRegistryType(type) {
+            currentRegistryType = type;
+            document.getElementById('registryForm').style.display = 'block';
+            
+            // Update form based on type
+            const registryNameInput = document.getElementById('registry-name');
+            const typeNames = {
+                'wedding': 'Wedding Registry',
+                'baby': 'Baby Registry',
+                'birthday': 'Birthday Registry',
+                'housewarming': 'Housewarming Registry'
+            };
+            
+            registryNameInput.value = typeNames[type];
+            
+            // Scroll to form
+            document.getElementById('registryForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchRegistry() {
+            const searchBy = document.getElementById('search-by').value;
+            const searchInput = document.getElementById('search-input').value.trim();
+            
+            if (searchInput) {
+                document.getElementById('registryResults').style.display = 'block';
+                showNotification('Registry search completed!');
+            } else {
+                showNotification('Please enter a search term.');
+            }
+        }
+
+        function viewRegistry(registryId) {
+            // Populate modal with registry details
+            document.getElementById('modalRegistryName').textContent = 'John & Sarah\'s Wedding Registry';
+            document.getElementById('modalEventDate').textContent = 'July 15, 2025';
+            document.getElementById('modalRegistrant').textContent = 'John Smith & Sarah Johnson';
+            
+            // Populate items
+            const itemsList = document.querySelector('.modal-items-list');
+            itemsList.innerHTML = `
+                <div class="registry-item-modal">
+                    <img src="box1_image.jpg" alt="Smart Speaker">
+                    <div class="item-details">
+                        <h4>Smart Speaker</h4>
+                        <p>₹8,999</p>
+                        <span class="status available">Available</span>
+                    </div>
+                    <button class="buy-gift-btn" onclick="buyGift('speaker')">Buy as Gift</button>
+                </div>
+                <div class="registry-item-modal">
+                    <img src="box2_image.jpg" alt="Coffee Maker">
+                    <div class="item-details">
+                        <h4>Coffee Maker</h4>
+                        <p>₹12,999</p>
+                        <span class="status purchased">Purchased</span>
+                    </div>
+                    <button class="buy-gift-btn" disabled>Already Purchased</button>
+                </div>
+                <div class="registry-item-modal">
+                    <img src="box3_image.jpg" alt="Photo Frame Set">
+                    <div class="item-details">
+                        <h4>Photo Frame Set</h4>
+                        <p>₹2,499</p>
+                        <span class="status available">Available</span>
+                    </div>
+                    <button class="buy-gift-btn" onclick="buyGift('frames')">Buy as Gift</button>
+                </div>
+            `;
+            
+            document.getElementById('registryModal').style.display = 'flex';
+        }
+
+        function buyGift(itemId) {
+            const giftItems = {
+                'speaker': { id: 'gift-speaker', name: 'Smart Speaker (Gift)', price: 8999, image: 'box1_image.jpg' },
+                'frames': { id: 'gift-frames', name: 'Photo Frame Set (Gift)', price: 2499, image: 'box3_image.jpg' }
+            };
+            
+            const item = giftItems[itemId];
+            if (item) {
+                addToCart(item);
+                showNotification('Gift item added to cart!');
+                closeModal('registryModal');
+            }
+        }
+
+        function addToRegistry(itemType) {
+            if (userRegistries.length === 0) {
+                showNotification('Please create a registry first!');
+                showRegistrySection('create');
+                return;
+            }
+            
+            showNotification('Item added to your registry!');
+        }
+
+        function loadUserRegistries() {
+            const registriesList = document.getElementById('registriesList');
+            const noRegistries = document.getElementById('noRegistries');
+            
+            if (userRegistries.length === 0) {
+                noRegistries.style.display = 'block';
+                registriesList.style.display = 'none';
+            } else {
+                noRegistries.style.display = 'none';
+                registriesList.style.display = 'block';
+                
+                registriesList.innerHTML = userRegistries.map(registry => `
+                    <div class="user-registry-item">
+                        <div class="registry-info">
+                            <h3>${registry.name}</h3>
+                            <p><i class="fas fa-calendar"></i> ${registry.eventDate}</p>
+                            <p><i class="fas fa-eye"></i> ${registry.privacy}</p>
+                        </div>
+                        <div class="registry-actions">
+                            <button class="manage-btn" onclick="manageRegistry('${registry.id}')">Manage</button>
+                            <button class="share-btn" onclick="shareRegistry('${registry.id}')">Share</button>
+                            <button class="delete-btn" onclick="deleteRegistry('${registry.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function manageRegistry(registryId) {
+            showNotification('Registry management feature coming soon!');
+        }
+
+        function shareRegistry(registryId) {
+            const shareUrl = `${window.location.origin}/registry.html?id=${registryId}`;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                showNotification('Registry link copied to clipboard!');
+            }).catch(() => {
+                showNotification('Share link: ' + shareUrl);
+            });
+        }
+
+        function deleteRegistry(registryId) {
+            if (confirm('Are you sure you want to delete this registry?')) {
+                userRegistries = userRegistries.filter(r => r.id !== registryId);
+                localStorage.setItem('userRegistries', JSON.stringify(userRegistries));
+                loadUserRegistries();
+                showNotification('Registry deleted successfully!');
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Form submission
+        document.getElementById('createRegistryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newRegistry = {
+                id: 'reg-' + Date.now(),
+                type: currentRegistryType,
+                name: document.getElementById('registry-name').value,
+                eventDate: document.getElementById('event-date').value,
+                registrantName: document.getElementById('registrant-name').value,
+                partnerName: document.getElementById('partner-name').value,
+                description: document.getElementById('registry-description').value,
+                privacy: document.getElementById('privacy-setting').value,
+                shippingAddress: document.getElementById('shipping-address').value,
+                items: [],
+                createdDate: new Date().toISOString()
+            };
+            
+            userRegistries.push(newRegistry);
+            localStorage.setItem('userRegistries', JSON.stringify(userRegistries));
+            
+            showNotification('Registry created successfully!');
+            this.reset();
+            document.getElementById('registryForm').style.display = 'none';
+            
+            // Switch to manage section
+            showRegistrySection('manage');
+            loadUserRegistries();
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('registryModal');
+            if (e.target === modal) {
+                closeModal('registryModal');
+            }
+        });
+    </script>
+</body>
+</html>

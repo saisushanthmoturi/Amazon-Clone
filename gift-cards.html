@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards - Amazon Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="amazon_logo.png" alt="Amazon Logo">
+                </a>
+            </div>
+
+            <div class="nav-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="location-top">Deliver to</span>
+                    <span class="location-bottom">India</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                    <option>Fashion</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <span class="nav-item-top">Hello, sign in</span>
+                    <span class="nav-item-bottom">Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-item-top">Returns</span>
+                    <span class="nav-item-bottom">& Orders</span>
+                </div>
+                <div class="nav-cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-left">
+                <i class="fas fa-bars"></i>
+                <a href="products.html">All</a>
+            </div>
+            <div class="panel-right">
+                <a href="deals.html">Today's Deals</a>
+                <a href="customer-service.html">Customer Service</a>
+                <a href="registry.html">Registry</a>
+                <a href="gift-cards.html" class="active">Gift Cards</a>
+                <a href="#">Sell</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="gift-cards-main">
+        <div class="gc-hero">
+            <h1>Gift Cards</h1>
+            <p>Give the perfect gift with Amazon Gift Cards</p>
+        </div>
+
+        <!-- Gift Card Categories -->
+        <section class="gc-categories">
+            <h2>Choose Your Gift Card</h2>
+            <div class="gc-tabs">
+                <button class="gc-tab active" onclick="showGCType('digital')">Digital Gift Cards</button>
+                <button class="gc-tab" onclick="showGCType('physical')">Physical Gift Cards</button>
+                <button class="gc-tab" onclick="showGCType('reload')">Reload Balance</button>
+            </div>
+
+            <!-- Digital Gift Cards -->
+            <div id="digital" class="gc-content active">
+                <div class="gc-grid">
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design birthday">
+                                <h3>Happy Birthday!</h3>
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                        </div>
+                        <h4>Birthday Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('birthday', 'digital')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design celebration">
+                                <h3>Congratulations!</h3>
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <h4>Celebration Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('celebration', 'digital')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design thank-you">
+                                <h3>Thank You!</h3>
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <h4>Thank You Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('thank-you', 'digital')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design holiday">
+                                <h3>Happy Holidays!</h3>
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                        </div>
+                        <h4>Holiday Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('holiday', 'digital')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design wedding">
+                                <h3>Wedding Wishes</h3>
+                                <i class="fas fa-ring"></i>
+                            </div>
+                        </div>
+                        <h4>Wedding Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('wedding', 'digital')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview">
+                            <div class="gc-design generic">
+                                <h3>Amazon Gift Card</h3>
+                                <i class="fas fa-gift"></i>
+                            </div>
+                        </div>
+                        <h4>Classic Theme</h4>
+                        <button class="select-gc-btn" onclick="selectGiftCard('classic', 'digital')">Select</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physical Gift Cards -->
+            <div id="physical" class="gc-content">
+                <div class="gc-grid">
+                    <div class="gc-card">
+                        <div class="gc-preview physical">
+                            <img src="box1_image.jpg" alt="Gift Box Card">
+                        </div>
+                        <h4>Gift Box</h4>
+                        <p>Delivered in elegant gift box</p>
+                        <button class="select-gc-btn" onclick="selectGiftCard('gift-box', 'physical')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview physical">
+                            <img src="box2_image.jpg" alt="Greeting Card">
+                        </div>
+                        <h4>Greeting Card</h4>
+                        <p>Card with personalized message</p>
+                        <button class="select-gc-btn" onclick="selectGiftCard('greeting-card', 'physical')">Select</button>
+                    </div>
+
+                    <div class="gc-card">
+                        <div class="gc-preview physical">
+                            <img src="box3_image.jpg" alt="Premium Box">
+                        </div>
+                        <h4>Premium Box</h4>
+                        <p>Luxury gift box presentation</p>
+                        <button class="select-gc-btn" onclick="selectGiftCard('premium-box', 'physical')">Select</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reload Balance -->
+            <div id="reload" class="gc-content">
+                <div class="reload-section">
+                    <h3>Reload Your Gift Card Balance</h3>
+                    <p>Add money to your existing Amazon Gift Card balance</p>
+                    <div class="reload-form">
+                        <div class="form-group">
+                            <label for="reload-amount">Amount to Reload:</label>
+                            <div class="amount-options">
+                                <button class="amount-btn" onclick="setReloadAmount(500)">₹500</button>
+                                <button class="amount-btn" onclick="setReloadAmount(1000)">₹1,000</button>
+                                <button class="amount-btn" onclick="setReloadAmount(2000)">₹2,000</button>
+                                <button class="amount-btn" onclick="setReloadAmount(5000)">₹5,000</button>
+                            </div>
+                            <input type="number" id="reload-amount" placeholder="Enter custom amount" min="100" max="50000">
+                        </div>
+                        <button class="reload-btn" onclick="reloadBalance()">Reload Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Card Purchase Form -->
+        <section class="gc-purchase" id="gcPurchaseForm" style="display: none;">
+            <h2>Customize Your Gift Card</h2>
+            <div class="purchase-container">
+                <div class="gc-preview-large">
+                    <div id="selectedGCPreview" class="gc-design-large">
+                        <!-- Preview will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="gc-form">
+                    <form id="giftCardForm">
+                        <div class="form-group">
+                            <label for="gc-amount">Amount:</label>
+                            <div class="amount-options">
+                                <button type="button" class="amount-btn" onclick="setAmount(500)">₹500</button>
+                                <button type="button" class="amount-btn" onclick="setAmount(1000)">₹1,000</button>
+                                <button type="button" class="amount-btn" onclick="setAmount(2000)">₹2,000</button>
+                                <button type="button" class="amount-btn" onclick="setAmount(5000)">₹5,000</button>
+                            </div>
+                            <input type="number" id="gc-amount" placeholder="Enter amount" min="100" max="50000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gc-recipient-name">Recipient Name:</label>
+                            <input type="text" id="gc-recipient-name" placeholder="Enter recipient's name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gc-recipient-email">Recipient Email:</label>
+                            <input type="email" id="gc-recipient-email" placeholder="Enter recipient's email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gc-sender-name">Your Name:</label>
+                            <input type="text" id="gc-sender-name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gc-message">Personal Message (Optional):</label>
+                            <textarea id="gc-message" placeholder="Enter a personal message" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group" id="deliveryDateGroup" style="display: none;">
+                            <label for="gc-delivery-date">Delivery Date:</label>
+                            <input type="date" id="gc-delivery-date">
+                        </div>
+
+                        <div class="form-group" id="addressGroup" style="display: none;">
+                            <label for="gc-address">Delivery Address:</label>
+                            <textarea id="gc-address" placeholder="Enter delivery address" rows="3"></textarea>
+                        </div>
+
+                        <div class="gc-summary">
+                            <h3>Order Summary</h3>
+                            <div class="summary-item">
+                                <span>Gift Card Amount:</span>
+                                <span id="summaryAmount">₹0</span>
+                            </div>
+                            <div class="summary-item" id="shippingCost" style="display: none;">
+                                <span>Shipping:</span>
+                                <span>₹50</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total:</span>
+                                <span id="summaryTotal">₹0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="purchase-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Card Balance Section -->
+        <section class="gc-balance">
+            <h2>Check Your Gift Card Balance</h2>
+            <div class="balance-container">
+                <div class="balance-form">
+                    <div class="form-group">
+                        <label for="gc-code">Gift Card Code:</label>
+                        <input type="text" id="gc-code" placeholder="Enter your gift card code">
+                    </div>
+                    <button class="check-balance-btn" onclick="checkBalance()">Check Balance</button>
+                </div>
+                <div class="balance-result" id="balanceResult" style="display: none;">
+                    <h3>Your Gift Card Balance</h3>
+                    <div class="balance-amount">₹2,500</div>
+                    <p>Valid until: December 31, 2025</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="foot-panel" onclick="scrollToTop()">Back to top</div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Amazon Devices</a>
+                <a href="#">Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="sell.html">Sell products on Amazon</a>
+                <a href="#">Sell on Amazon Business</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Self-Publish with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="account.html">Your Account</a>
+                <a href="orders.html">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+                <a href="#">Returns & Replacements</a>
+                <a href="customer-service.html">Help</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let selectedGiftCard = null;
+        let selectedType = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            
+            // Set minimum date for delivery
+            const today = new Date();
+            today.setDate(today.getDate() + 1);
+            document.getElementById('gc-delivery-date').min = today.toISOString().split('T')[0];
+        });
+
+        function showGCType(type) {
+            // Update tabs
+            document.querySelectorAll('.gc-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`[onclick="showGCType('${type}')"]`).classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.gc-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(type).classList.add('active');
+            
+            // Hide purchase form
+            document.getElementById('gcPurchaseForm').style.display = 'none';
+        }
+
+        function selectGiftCard(theme, type) {
+            selectedGiftCard = theme;
+            selectedType = type;
+            
+            // Show purchase form
+            document.getElementById('gcPurchaseForm').style.display = 'block';
+            
+            // Update preview
+            updateGiftCardPreview();
+            
+            // Show/hide fields based on type
+            if (type === 'physical') {
+                document.getElementById('deliveryDateGroup').style.display = 'block';
+                document.getElementById('addressGroup').style.display = 'block';
+                document.getElementById('shippingCost').style.display = 'flex';
+            } else {
+                document.getElementById('deliveryDateGroup').style.display = 'none';
+                document.getElementById('addressGroup').style.display = 'none';
+                document.getElementById('shippingCost').style.display = 'none';
+            }
+            
+            // Scroll to form
+            document.getElementById('gcPurchaseForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateGiftCardPreview() {
+            const preview = document.getElementById('selectedGCPreview');
+            const themes = {
+                'birthday': { title: 'Happy Birthday!', icon: 'fas fa-birthday-cake', color: '#ff6b6b' },
+                'celebration': { title: 'Congratulations!', icon: 'fas fa-trophy', color: '#4ecdc4' },
+                'thank-you': { title: 'Thank You!', icon: 'fas fa-heart', color: '#45b7d1' },
+                'holiday': { title: 'Happy Holidays!', icon: 'fas fa-snowflake', color: '#96ceb4' },
+                'wedding': { title: 'Wedding Wishes', icon: 'fas fa-ring', color: '#ffeaa7' },
+                'classic': { title: 'Amazon Gift Card', icon: 'fas fa-gift', color: '#fd79a8' }
+            };
+            
+            const theme = themes[selectedGiftCard] || themes['classic'];
+            preview.innerHTML = `
+                <h3 style="color: ${theme.color}">${theme.title}</h3>
+                <i class="${theme.icon}" style="color: ${theme.color}"></i>
+                <div class="gc-amount-display">₹<span id="previewAmount">0</span></div>
+            `;
+            preview.style.background = `linear-gradient(135deg, ${theme.color}20, ${theme.color}10)`;
+            preview.style.border = `2px solid ${theme.color}`;
+        }
+
+        function setAmount(amount) {
+            document.getElementById('gc-amount').value = amount;
+            updateSummary();
+            updatePreviewAmount();
+        }
+
+        function setReloadAmount(amount) {
+            document.getElementById('reload-amount').value = amount;
+        }
+
+        function updatePreviewAmount() {
+            const amount = document.getElementById('gc-amount').value || 0;
+            document.getElementById('previewAmount').textContent = amount;
+        }
+
+        function updateSummary() {
+            const amount = parseFloat(document.getElementById('gc-amount').value) || 0;
+            const shipping = selectedType === 'physical' ? 50 : 0;
+            const total = amount + shipping;
+            
+            document.getElementById('summaryAmount').textContent = `₹${amount}`;
+            document.getElementById('summaryTotal').textContent = `₹${total}`;
+        }
+
+        function checkBalance() {
+            const code = document.getElementById('gc-code').value.trim();
+            if (code) {
+                document.getElementById('balanceResult').style.display = 'block';
+                showNotification('Gift card balance retrieved successfully!');
+            } else {
+                showNotification('Please enter a valid gift card code.');
+            }
+        }
+
+        function reloadBalance() {
+            const amount = document.getElementById('reload-amount').value;
+            if (amount && amount >= 100) {
+                showNotification(`₹${amount} has been added to your gift card balance!`);
+                document.getElementById('reload-amount').value = '';
+            } else {
+                showNotification('Please enter a valid amount (minimum ₹100).');
+            }
+        }
+
+        // Form event listeners
+        document.getElementById('gc-amount').addEventListener('input', function() {
+            updateSummary();
+            updatePreviewAmount();
+        });
+
+        document.getElementById('giftCardForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const amount = parseFloat(document.getElementById('gc-amount').value);
+            const recipientName = document.getElementById('gc-recipient-name').value;
+            const recipientEmail = document.getElementById('gc-recipient-email').value;
+            const senderName = document.getElementById('gc-sender-name').value;
+            
+            if (amount < 100) {
+                showNotification('Minimum gift card amount is ₹100.');
+                return;
+            }
+            
+            if (amount > 50000) {
+                showNotification('Maximum gift card amount is ₹50,000.');
+                return;
+            }
+            
+            // Create gift card product
+            const giftCardProduct = {
+                id: `gc-${Date.now()}`,
+                name: `Amazon Gift Card - ${selectedGiftCard}`,
+                price: amount,
+                image: 'amazon_logo.png',
+                type: 'gift-card',
+                recipient: recipientName,
+                recipientEmail: recipientEmail,
+                sender: senderName,
+                theme: selectedGiftCard,
+                deliveryType: selectedType
+            };
+            
+            addToCart(giftCardProduct);
+            showNotification('Gift card added to cart successfully!');
+            
+            // Reset form
+            this.reset();
+            document.getElementById('gcPurchaseForm').style.display = 'none';
+            updateSummary();
+        });
+    </script>
+</body>
+</html>

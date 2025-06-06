@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell on Amazon - Start Your Business</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border" onclick="window.location.href='index.html'">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">deliver-to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-sec">india</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select name="" id="" class="search-select">
+                    <option value="">all</option>
+                </select>
+                <input type="text" placeholder="search amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-signin border" onclick="window.location.href='signin.html'">
+                <p class=""><span>hello,sign in</span></p>
+                <p class="nav-second">accounts and lists</p>
+            </div>
+            <div class="nav-return border" onclick="window.location.href='orders.html'">
+                <p class=""><span>returns</span></p>
+                <p class="nav-second">& orders</p>
+            </div>
+            <div class="nav-cart border" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+                Cart
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-all border">
+                <i class="fas fa-bars"></i>
+                All
+            </div>
+            <div class="panel-ops">
+                <p onclick="window.location.href='deals.html'">Today's Deals</p>
+                <p onclick="window.location.href='customer-service.html'">Customer Service</p>
+                <p onclick="window.location.href='registry.html'">Registry</p>
+                <p onclick="window.location.href='gift-cards.html'">Gift Cards</p>
+                <p class="panel-deals" onclick="window.location.href='sell.html'">Sell</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="sell-main">
+        <!-- Hero Section -->
+        <div class="sell-hero">
+            <div class="hero-content">
+                <h1>Start selling on Amazon</h1>
+                <p>Join millions of sellers who have chosen Amazon to grow their business</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>50M+</h3>
+                        <p>Products sold</p>
+                    </div>
+                    <div class="stat">
+                        <h3>180+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat">
+                        <h3>2M+</h3>
+                        <p>Active sellers</p>
+                    </div>
+                </div>
+                <button class="start-selling-btn" onclick="showSellerForm()">Start Selling Now</button>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-store"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="sell-nav">
+            <button class="sell-nav-btn active" onclick="switchSellerSection('getting-started')">Getting Started</button>
+            <button class="sell-nav-btn" onclick="switchSellerSection('list-product')">List a Product</button>
+            <button class="sell-nav-btn" onclick="switchSellerSection('seller-dashboard')">Seller Dashboard</button>
+            <button class="sell-nav-btn" onclick="switchSellerSection('pricing-plans')">Pricing & Plans</button>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div id="getting-started" class="seller-section active">
+            <div class="section-header">
+                <h2>How to Start Selling</h2>
+                <p>Follow these simple steps to begin your Amazon selling journey</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Create Your Account</h3>
+                    <p>Sign up for a seller account with your business information and verify your identity</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-box"></i>
+                    <h3>List Your Products</h3>
+                    <p>Add product details, photos, and pricing to create compelling listings</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Manage Orders</h3>
+                    <p>Process orders, ship products, and provide excellent customer service</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Grow Your Business</h3>
+                    <p>Use Amazon's tools and analytics to optimize and scale your business</p>
+                </div>
+            </div>
+
+            <div class="selling-benefits">
+                <h2>Why Sell on Amazon?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Reach</h3>
+                        <p>Access to millions of customers worldwide through Amazon's marketplace</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Trust & Security</h3>
+                        <p>Leverage Amazon's trusted brand and secure payment processing</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Seller Tools</h3>
+                        <p>Professional tools for inventory management, analytics, and advertising</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Fulfillment Options</h3>
+                        <p>Choose from self-fulfillment or Amazon FBA for logistics support</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Get help from our seller support team whenever you need it</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Apps</h3>
+                        <p>Manage your business on-the-go with Amazon Seller mobile app</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- List Product Section -->
+        <div id="list-product" class="seller-section">
+            <div class="section-header">
+                <h2>List Your Product</h2>
+                <p>Create a new product listing on Amazon marketplace</p>
+            </div>
+
+            <div class="product-form-container">
+                <form class="product-form" id="productForm">
+                    <div class="form-section">
+                        <h3>Product Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productTitle">Product Title *</label>
+                                <input type="text" id="productTitle" required maxlength="200">
+                                <small>Write a clear, descriptive title (max 200 characters)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productCategory">Category *</label>
+                                <select id="productCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="clothing">Clothing & Accessories</option>
+                                    <option value="home">Home & Kitchen</option>
+                                    <option value="books">Books</option>
+                                    <option value="sports">Sports & Outdoors</option>
+                                    <option value="beauty">Beauty & Personal Care</option>
+                                    <option value="toys">Toys & Games</option>
+                                    <option value="automotive">Automotive</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="productBrand">Brand</label>
+                                <input type="text" id="productBrand">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productDescription">Product Description *</label>
+                            <textarea id="productDescription" rows="6" required placeholder="Describe your product features, benefits, and specifications..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productKeywords">Search Keywords</label>
+                            <input type="text" id="productKeywords" placeholder="Enter keywords separated by commas">
+                            <small>Add relevant keywords to help customers find your product</small>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Pricing & Inventory</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productPrice">Price (₹) *</label>
+                                <input type="number" id="productPrice" step="0.01" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productComparePrice">Compare at Price (₹)</label>
+                                <input type="number" id="productComparePrice" step="0.01" min="0">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productSKU">SKU</label>
+                                <input type="text" id="productSKU" placeholder="Your product identifier">
+                            </div>
+                            <div class="form-group">
+                                <label for="productQuantity">Available Quantity *</label>
+                                <input type="number" id="productQuantity" min="0" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Product Images</h3>
+                        <div class="image-upload-area">
+                            <div class="upload-zone" onclick="document.getElementById('productImages').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload product images</p>
+                                <small>Upload up to 9 high-quality images (JPEG, PNG)</small>
+                            </div>
+                            <input type="file" id="productImages" multiple accept="image/*" style="display: none;">
+                        </div>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Shipping & Fulfillment</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fulfillmentMethod">Fulfillment Method *</label>
+                                <select id="fulfillmentMethod" required>
+                                    <option value="">Select Method</option>
+                                    <option value="self">Fulfilled by Merchant (Self)</option>
+                                    <option value="amazon">Fulfilled by Amazon (FBA)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingTime">Shipping Time</label>
+                                <select id="shippingTime">
+                                    <option value="1-2">1-2 days</option>
+                                    <option value="3-5">3-5 days</option>
+                                    <option value="5-7">5-7 days</option>
+                                    <option value="7-14">7-14 days</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shippingCost">Shipping Cost (₹)</label>
+                                <input type="number" id="shippingCost" step="0.01" min="0" placeholder="0 for free shipping">
+                            </div>
+                            <div class="form-group">
+                                <label for="packageWeight">Package Weight (kg)</label>
+                                <input type="number" id="packageWeight" step="0.1" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="save-draft-btn">Save as Draft</button>
+                        <button type="submit" class="list-product-btn">List Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seller Dashboard Section -->
+        <div id="seller-dashboard" class="seller-section">
+            <div class="section-header">
+                <h2>Seller Dashboard</h2>
+                <p>Manage your products, orders, and business performance</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-info">
+                        <h3>₹1,25,000</h3>
+                        <p>Total Sales (This Month)</p>
+                        <span class="stat-change positive">+15.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="stat-info">
+                        <h3>847</h3>
+                        <p>Orders Processed</p>
+                        <span class="stat-change positive">+8.5%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-box"></i>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>Active Listings</p>
+                        <span class="stat-change">+3 new</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-info">
+                        <h3>4.8</h3>
+                        <p>Seller Rating</p>
+                        <span class="stat-change positive">+0.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-tabs">
+                <button class="dashboard-tab-btn active" onclick="switchDashboardTab('products')">Products</button>
+                <button class="dashboard-tab-btn" onclick="switchDashboardTab('orders')">Orders</button>
+                <button class="dashboard-tab-btn" onclick="switchDashboardTab('analytics')">Analytics</button>
+                <button class="dashboard-tab-btn" onclick="switchDashboardTab('settings')">Settings</button>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="dashboard-products" class="dashboard-tab-content active">
+                <div class="products-header">
+                    <h3>Your Products</h3>
+                    <div class="products-actions">
+                        <button class="add-product-btn" onclick="switchSellerSection('list-product')">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                        <select class="filter-select">
+                            <option value="all">All Products</option>
+                            <option value="active">Active</option>
+                            <option value="draft">Draft</option>
+                            <option value="out-of-stock">Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>SKU</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://via.placeholder.com/50" alt="Product">
+                                        <span>Wireless Bluetooth Headphones</span>
+                                    </div>
+                                </td>
+                                <td>WBH-001</td>
+                                <td>₹2,999</td>
+                                <td>45</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://via.placeholder.com/50" alt="Product">
+                                        <span>Smartphone Case</span>
+                                    </div>
+                                </td>
+                                <td>SC-002</td>
+                                <td>₹599</td>
+                                <td>0</td>
+                                <td><span class="status out-of-stock">Out of Stock</span></td>
+                                <td>
+                                    <button class="edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://via.placeholder.com/50" alt="Product">
+                                        <span>Gaming Mouse</span>
+                                    </div>
+                                </td>
+                                <td>GM-003</td>
+                                <td>₹1,299</td>
+                                <td>23</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="dashboard-orders" class="dashboard-tab-content">
+                <div class="orders-header">
+                    <h3>Recent Orders</h3>
+                    <select class="filter-select">
+                        <option value="all">All Orders</option>
+                        <option value="pending">Pending</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#AMZ001234</td>
+                                <td>John Doe</td>
+                                <td>Wireless Bluetooth Headphones</td>
+                                <td>₹2,999</td>
+                                <td>2024-01-15</td>
+                                <td><span class="status shipped">Shipped</span></td>
+                                <td>
+                                    <button class="view-order-btn">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#AMZ001235</td>
+                                <td>Jane Smith</td>
+                                <td>Gaming Mouse</td>
+                                <td>₹1,299</td>
+                                <td>2024-01-14</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="view-order-btn">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#AMZ001236</td>
+                                <td>Mike Johnson</td>
+                                <td>Smartphone Case</td>
+                                <td>₹599</td>
+                                <td>2024-01-13</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>
+                                    <button class="view-order-btn">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="dashboard-analytics" class="dashboard-tab-content">
+                <h3>Sales Analytics</h3>
+                <div class="analytics-container">
+                    <div class="chart-placeholder">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>Sales Performance Chart</p>
+                        <small>Visual analytics coming soon</small>
+                    </div>
+                    <div class="analytics-summary">
+                        <div class="summary-item">
+                            <h4>Best Selling Product</h4>
+                            <p>Wireless Bluetooth Headphones</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Average Order Value</h4>
+                            <p>₹1,876</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Return Rate</h4>
+                            <p>2.3%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="dashboard-settings" class="dashboard-tab-content">
+                <h3>Seller Settings</h3>
+                <div class="settings-container">
+                    <div class="setting-section">
+                        <h4>Business Information</h4>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Business Name</label>
+                                <input type="text" value="Tech Innovators Store">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Email</label>
+                                <input type="email" value="seller@techinnovators.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Business Phone</label>
+                                <input type="tel" value="+91 9876543210">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="setting-section">
+                        <h4>Shipping Settings</h4>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Default Shipping Method</label>
+                                <select>
+                                    <option>Standard Shipping</option>
+                                    <option>Express Shipping</option>
+                                    <option>Free Shipping</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Processing Time</label>
+                                <select>
+                                    <option>1-2 business days</option>
+                                    <option>3-5 business days</option>
+                                    <option>5-7 business days</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="setting-section">
+                        <h4>Notification Preferences</h4>
+                        <div class="notification-settings">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Email notifications for new orders
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                SMS notifications for urgent issues
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Marketing emails
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Plans Section -->
+        <div id="pricing-plans" class="seller-section">
+            <div class="section-header">
+                <h2>Choose Your Selling Plan</h2>
+                <p>Select the plan that best fits your business needs</p>
+            </div>
+
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Individual</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for casual sellers</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> ₹99 per item sold</li>
+                            <li><i class="fas fa-check"></i> Access to optional selling tools</li>
+                            <li><i class="fas fa-check"></i> Sell one item at a time</li>
+                            <li><i class="fas fa-check"></i> Standard customer support</li>
+                            <li><i class="fas fa-times"></i> No bulk listing tools</li>
+                            <li><i class="fas fa-times"></i> No advanced reports</li>
+                        </ul>
+                    </div>
+                    <button class="select-plan-btn">Choose Individual</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Best for growing businesses</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> No per-item selling fee</li>
+                            <li><i class="fas fa-check"></i> Advanced selling tools</li>
+                            <li><i class="fas fa-check"></i> Bulk listing and editing</li>
+                            <li><i class="fas fa-check"></i> Advanced reports and analytics</li>
+                            <li><i class="fas fa-check"></i> Priority customer support</li>
+                            <li><i class="fas fa-check"></i> Access to Amazon Advertising</li>
+                        </ul>
+                    </div>
+                    <button class="select-plan-btn">Choose Professional</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">2999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For large-scale operations</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything in Professional</li>
+                            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                            <li><i class="fas fa-check"></i> Custom API integrations</li>
+                            <li><i class="fas fa-check"></i> Advanced inventory management</li>
+                            <li><i class="fas fa-check"></i> Brand protection tools</li>
+                            <li><i class="fas fa-check"></i> 24/7 premium support</li>
+                        </ul>
+                    </div>
+                    <button class="select-plan-btn">Contact Sales</button>
+                </div>
+            </div>
+
+            <div class="fee-calculator">
+                <h3>Fee Calculator</h3>
+                <p>Calculate your Amazon selling fees</p>
+                <div class="calculator-form">
+                    <div class="calc-input">
+                        <label>Product Category</label>
+                        <select id="calcCategory">
+                            <option value="electronics">Electronics (12%)</option>
+                            <option value="clothing">Clothing (15%)</option>
+                            <option value="home">Home & Kitchen (10%)</option>
+                            <option value="books">Books (8%)</option>
+                        </select>
+                    </div>
+                    <div class="calc-input">
+                        <label>Product Price (₹)</label>
+                        <input type="number" id="calcPrice" placeholder="Enter product price">
+                    </div>
+                    <button class="calculate-btn" onclick="calculateFees()">Calculate Fees</button>
+                </div>
+                <div class="fee-result" id="feeResult"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seller Registration Modal -->
+    <div id="sellerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSellerModal()">&times;</span>
+            <h2>Start Selling on Amazon</h2>
+            <form class="seller-form" id="sellerRegistrationForm">
+                <div class="form-section">
+                    <h3>Business Information</h3>
+                    <div class="form-group">
+                        <label for="businessName">Business Name *</label>
+                        <input type="text" id="businessName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessType">Business Type *</label>
+                        <select id="businessType" required>
+                            <option value="">Select Business Type</option>
+                            <option value="individual">Individual/Sole Proprietorship</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="llp">Limited Liability Partnership</option>
+                            <option value="company">Private/Public Company</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gstin">GSTIN</label>
+                            <input type="text" id="gstin" placeholder="Enter GSTIN if applicable">
+                        </div>
+                        <div class="form-group">
+                            <label for="pan">PAN Number *</label>
+                            <input type="text" id="pan" required placeholder="Enter PAN number">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerEmail">Email Address *</label>
+                        <input type="email" id="sellerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerPhone">Phone Number *</label>
+                        <input type="tel" id="sellerPhone" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Address Information</h3>
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea id="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <select id="state" required>
+                                <option value="">Select State</option>
+                                <option value="andhra-pradesh">Andhra Pradesh</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="tamil-nadu">Tamil Nadu</option>
+                                <option value="delhi">Delhi</option>
+                                <!-- Add more states as needed -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pincode">PIN Code *</label>
+                            <input type="text" id="pincode" required pattern="[0-9]{6}">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" value="India" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Bank Details</h3>
+                    <div class="form-group">
+                        <label for="accountNumber">Bank Account Number *</label>
+                        <input type="text" id="accountNumber" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ifscCode">IFSC Code *</label>
+                            <input type="text" id="ifscCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bankName">Bank Name *</label>
+                            <input type="text" id="bankName" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Selling Plan</h3>
+                    <div class="plan-selection">
+                        <label class="radio-label">
+                            <input type="radio" name="sellingPlan" value="individual" checked>
+                            <span class="radio-mark"></span>
+                            Individual Plan (₹0/month + ₹99 per item)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sellingPlan" value="professional">
+                            <span class="radio-mark"></span>
+                            Professional Plan (₹999/month)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="terms-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to Amazon's <a href="#">Terms of Service</a> and <a href="#">Seller Agreement</a>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-seller-btn">Complete Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot-panel">
+            Back to top
+        </div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Investor Relations</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="sell.html">Sell products on Amazon</a>
+                <a href="#">Sell on Amazon Business</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="#">Your Account</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2024, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Seller page specific JavaScript
+        function switchSellerSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.seller-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.sell-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        function showSellerForm() {
+            document.getElementById('sellerModal').style.display = 'flex';
+        }
+
+        function closeSellerModal() {
+            document.getElementById('sellerModal').style.display = 'none';
+        }
+
+        function switchDashboardTab(tabId) {
+            // Hide all dashboard tabs
+            document.querySelectorAll('.dashboard-tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById('dashboard-' + tabId).classList.add('active');
+            
+            // Update tab buttons
+            document.querySelectorAll('.dashboard-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        function calculateFees() {
+            const category = document.getElementById('calcCategory').value;
+            const price = parseFloat(document.getElementById('calcPrice').value);
+            
+            if (!price || price <= 0) {
+                alert('Please enter a valid product price');
+                return;
+            }
+
+            let feePercentage = 0;
+            switch(category) {
+                case 'electronics': feePercentage = 12; break;
+                case 'clothing': feePercentage = 15; break;
+                case 'home': feePercentage = 10; break;
+                case 'books': feePercentage = 8; break;
+            }
+
+            const referralFee = (price * feePercentage) / 100;
+            const closingFee = 25; // Fixed closing fee
+            const totalFees = referralFee + closingFee;
+            const netAmount = price - totalFees;
+
+            document.getElementById('feeResult').innerHTML = `
+                <h4>Fee Breakdown</h4>
+                <div class="fee-item">
+                    <span>Product Price:</span>
+                    <span>₹${price.toFixed(2)}</span>
+                </div>
+                <div class="fee-item">
+                    <span>Referral Fee (${feePercentage}%):</span>
+                    <span>₹${referralFee.toFixed(2)}</span>
+                </div>
+                <div class="fee-item">
+                    <span>Closing Fee:</span>
+                    <span>₹${closingFee.toFixed(2)}</span>
+                </div>
+                <div class="fee-item total">
+                    <span>Total Fees:</span>
+                    <span>₹${totalFees.toFixed(2)}</span>
+                </div>
+                <div class="fee-item net">
+                    <span>Net Amount (Your Earnings):</span>
+                    <span>₹${netAmount.toFixed(2)}</span>
+                </div>
+            `;
+        }
+
+        // Product form handling
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                title: document.getElementById('productTitle').value,
+                category: document.getElementById('productCategory').value,
+                brand: document.getElementById('productBrand').value,
+                description: document.getElementById('productDescription').value,
+                keywords: document.getElementById('productKeywords').value,
+                price: document.getElementById('productPrice').value,
+                comparePrice: document.getElementById('productComparePrice').value,
+                sku: document.getElementById('productSKU').value,
+                quantity: document.getElementById('productQuantity').value,
+                fulfillment: document.getElementById('fulfillmentMethod').value,
+                shippingTime: document.getElementById('shippingTime').value,
+                shippingCost: document.getElementById('shippingCost').value,
+                weight: document.getElementById('packageWeight').value
+            };
+
+            // Here you would normally send the data to a server
+            console.log('Product data:', formData);
+            
+            // Show success message
+            alert('Product listed successfully!');
+            
+            // Reset form
+            this.reset();
+            document.getElementById('imagePreview').innerHTML = '';
+        });
+
+        // Image upload handling
+        document.getElementById('productImages').addEventListener('change', function(e) {
+            const files = e.target.files;
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+
+            for (let i = 0; i < Math.min(files.length, 9); i++) {
+                const file = files[i];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'preview-image';
+                        
+                        const container = document.createElement('div');
+                        container.className = 'preview-container';
+                        container.appendChild(img);
+                        
+                        const removeBtn = document.createElement('button');
+                        removeBtn.innerHTML = '×';
+                        removeBtn.className = 'remove-image-btn';
+                        removeBtn.onclick = function() {
+                            container.remove();
+                        };
+                        container.appendChild(removeBtn);
+                        
+                        preview.appendChild(container);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+
+        // Seller registration form handling
+        document.getElementById('sellerRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the registration data to a server
+            alert('Registration submitted successfully! You will receive a confirmation email within 24 hours.');
+            closeSellerModal();
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('sellerModal');
+            if (event.target == modal) {
+                closeSellerModal();
+            }
+        };
+
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>

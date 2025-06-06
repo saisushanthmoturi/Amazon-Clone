@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service - Amazon Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="amazon_logo.png" alt="Amazon Logo">
+                </a>
+            </div>
+
+            <div class="nav-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="location-top">Deliver to</span>
+                    <span class="location-bottom">India</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                    <option>Fashion</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <span class="nav-item-top">Hello, sign in</span>
+                    <span class="nav-item-bottom">Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-item-top">Returns</span>
+                    <span class="nav-item-bottom">& Orders</span>
+                </div>
+                <div class="nav-cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-left">
+                <i class="fas fa-bars"></i>
+                <a href="products.html">All</a>
+            </div>
+            <div class="panel-right">
+                <a href="deals.html">Today's Deals</a>
+                <a href="customer-service.html" class="active">Customer Service</a>
+                <a href="registry.html">Registry</a>
+                <a href="gift-cards.html">Gift Cards</a>
+                <a href="#">Sell</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="customer-service-main">
+        <div class="cs-hero">
+            <h1>Customer Service</h1>
+            <p>How can we help you today?</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-grid">
+                <div class="action-card" onclick="window.location.href='orders.html'">
+                    <i class="fas fa-box"></i>
+                    <h3>Your Orders</h3>
+                    <p>Track, return, or buy things again</p>
+                </div>
+                <div class="action-card" onclick="window.location.href='orders.html'">
+                    <i class="fas fa-undo"></i>
+                    <h3>Returns & Refunds</h3>
+                    <p>Return or exchange items</p>
+                </div>
+                <div class="action-card" onclick="window.location.href='signin.html'">
+                    <i class="fas fa-user-cog"></i>
+                    <h3>Manage Your Account</h3>
+                    <p>Login & security, addresses, payment</p>
+                </div>
+                <div class="action-card" onclick="showContactModal()">
+                    <i class="fas fa-headset"></i>
+                    <h3>Contact Us</h3>
+                    <p>Get help with any issue</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Topics -->
+        <section class="help-topics">
+            <h2>Help Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-section">
+                    <h3>Ordering</h3>
+                    <ul>
+                        <li><a href="#" onclick="showHelpArticle('placing-order')">Placing an Order</a></li>
+                        <li><a href="#" onclick="showHelpArticle('payment-methods')">Payment Methods</a></li>
+                        <li><a href="#" onclick="showHelpArticle('order-changes')">Changing or Canceling Orders</a></li>
+                        <li><a href="#" onclick="showHelpArticle('gift-orders')">Gift Orders</a></li>
+                    </ul>
+                </div>
+                <div class="topic-section">
+                    <h3>Shipping & Delivery</h3>
+                    <ul>
+                        <li><a href="#" onclick="showHelpArticle('delivery-options')">Delivery Options</a></li>
+                        <li><a href="#" onclick="showHelpArticle('track-package')">Track Your Package</a></li>
+                        <li><a href="#" onclick="showHelpArticle('delivery-issues')">Delivery Issues</a></li>
+                        <li><a href="#" onclick="showHelpArticle('shipping-rates')">Shipping Rates & Policies</a></li>
+                    </ul>
+                </div>
+                <div class="topic-section">
+                    <h3>Returns & Refunds</h3>
+                    <ul>
+                        <li><a href="#" onclick="showHelpArticle('return-policy')">Return Policy</a></li>
+                        <li><a href="#" onclick="showHelpArticle('return-item')">Return an Item</a></li>
+                        <li><a href="#" onclick="showHelpArticle('refund-status')">Refund Status</a></li>
+                        <li><a href="#" onclick="showHelpArticle('return-reasons')">Return Reasons</a></li>
+                    </ul>
+                </div>
+                <div class="topic-section">
+                    <h3>Account & Login</h3>
+                    <ul>
+                        <li><a href="#" onclick="showHelpArticle('account-settings')">Account Settings</a></li>
+                        <li><a href="#" onclick="showHelpArticle('password-reset')">Password & Security</a></li>
+                        <li><a href="#" onclick="showHelpArticle('address-book')">Address Book</a></li>
+                        <li><a href="#" onclick="showHelpArticle('payment-settings')">Payment Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I track my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can track your order by visiting the "Your Orders" page. Simply click on the order you want to track and you'll see the latest updates on its status and expected delivery date.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is your return policy?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most items can be returned within 30 days of delivery. Items must be in their original condition and packaging. Some restrictions apply to certain categories like electronics and personal care items.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How can I change my delivery address?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can change your delivery address before your order ships by going to "Your Orders" and selecting "Change" next to the shipping address. After shipment, contact customer service for assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, debit cards, net banking, UPI, and cash on delivery for eligible orders. You can also use gift cards and promotional codes at checkout.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I cancel my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can cancel your order if it hasn't shipped yet. Go to "Your Orders", find the order you want to cancel, and click "Cancel items". If the order has already shipped, you'll need to return it after delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Options -->
+        <section class="contact-options">
+            <h2>Still Need Help?</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Support</h3>
+                    <p>Call us at 1800-123-4567</p>
+                    <p class="hours">Available 24/7</p>
+                    <button class="contact-btn" onclick="showNotification('Phone support feature coming soon!')">Call Now</button>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Live Chat</h3>
+                    <p>Chat with our support team</p>
+                    <p class="hours">Available 24/7</p>
+                    <button class="contact-btn" onclick="showChatModal()">Start Chat</button>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Support</h3>
+                    <p>Send us an email</p>
+                    <p class="hours">Response within 24 hours</p>
+                    <button class="contact-btn" onclick="showEmailModal()">Send Email</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact Customer Service</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-subject">Subject:</label>
+                    <select id="contact-subject" required>
+                        <option value="">Select a topic</option>
+                        <option value="order">Order Issue</option>
+                        <option value="delivery">Delivery Problem</option>
+                        <option value="return">Return/Refund</option>
+                        <option value="account">Account Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message:</label>
+                    <textarea id="contact-message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="chat-header">
+                <h3>Live Chat Support</h3>
+                <span class="close" onclick="closeModal('chatModal')">&times;</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message support-message">
+                    <strong>Support Agent:</strong> Hi! How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('emailModal')">&times;</span>
+            <h2>Email Support</h2>
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="email-to">To:</label>
+                    <input type="email" id="email-to" value="support@amazon-clone.com" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email-from">From:</label>
+                    <input type="email" id="email-from" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-subject">Subject:</label>
+                    <input type="text" id="email-subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-body">Message:</label>
+                    <textarea id="email-body" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Email</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="foot-panel" onclick="scrollToTop()">Back to top</div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Amazon Devices</a>
+                <a href="#">Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="sell.html">Sell products on Amazon</a>
+                <a href="#">Sell on Amazon Business</a>
+                <a href="#">Sell apps on Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Self-Publish with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Shop with Points</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="account.html">Your Account</a>
+                <a href="orders.html">Your Orders</a>
+                <a href="#">Shipping Rates & Policies</a>
+                <a href="#">Returns & Replacements</a>
+                <a href="customer-service.html">Help</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function showContactModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        function showChatModal() {
+            document.getElementById('chatModal').style.display = 'flex';
+        }
+
+        function showEmailModal() {
+            document.getElementById('emailModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            
+            if (input.value.trim()) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message user-message';
+                userMessage.innerHTML = `<strong>You:</strong> ${input.value}`;
+                messages.appendChild(userMessage);
+                
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+                
+                // Simulate agent response
+                setTimeout(() => {
+                    const agentMessage = document.createElement('div');
+                    agentMessage.className = 'message support-message';
+                    agentMessage.innerHTML = '<strong>Support Agent:</strong> Thank you for your message. I\'m looking into this for you.';
+                    messages.appendChild(agentMessage);
+                    messages.scrollTop = messages.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        function showHelpArticle(topic) {
+            const articles = {
+                'placing-order': 'Learn how to place an order on our platform with our step-by-step guide.',
+                'payment-methods': 'We accept various payment methods including credit cards, debit cards, and digital wallets.',
+                'order-changes': 'You can modify or cancel your order before it ships from our fulfillment center.',
+                'delivery-options': 'Choose from standard, expedited, or premium delivery options based on your needs.',
+                'track-package': 'Track your package in real-time using your order number and tracking ID.',
+                'return-policy': 'Our 30-day return policy allows you to return most items in their original condition.'
+            };
+            
+            const article = articles[topic] || 'Article content not available.';
+            alert(`Help Article: ${topic}\n\n${article}`);
+        }
+
+        // Form submissions
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Your message has been sent! We\'ll get back to you soon.');
+            closeModal('contactModal');
+            this.reset();
+        });
+
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Your email has been sent! We\'ll respond within 24 hours.');
+            closeModal('emailModal');
+            this.reset();
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const modals = ['contactModal', 'chatModal', 'emailModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (e.target === modal) {
+                    closeModal(modalId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
